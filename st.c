@@ -36,7 +36,7 @@
 #define CAR_PER_ARG   4
 #define STR_BUF_SIZ   ESC_BUF_SIZ
 #define STR_ARG_SIZ   ESC_ARG_SIZ
-#define HISTSIZE      2000
+#define HISTSIZE      10000
 #define RESIZEBUFFER  1000
 
 /* macros */
@@ -1988,7 +1988,7 @@ csihandle(void)
       }
 			/* vte does this:
 			tscrollup(0, term.row-1, term.row, SCROLL_SAVEHIST); */
-      
+
 			/* alacritty does this: */
 			for (n = term.row-1; n >= 0 && tlinelen(term.line[n]) == 0; n--);
 			if (n >= 0)
